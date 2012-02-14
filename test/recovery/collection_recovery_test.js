@@ -38,7 +38,7 @@ module.exports.run = function(next) {
           fs.stat(COLL_PATH, function(err, stat) {
             if (err) { next(err); return; }
             var size = stat.size;
-            fs.open(COLL_PATH, 'a', 0600, function(err, fd) {
+            fs.open(COLL_PATH, 'r+', 0600, function(err, fd) {
               if (err) { next(err); return; }
               fs.write(fd, new Buffer(" "), 0, 1, size - 1, function(err, written) {
                 if (err) { next(err); return; }
@@ -46,7 +46,7 @@ module.exports.run = function(next) {
                 fs.write(fd, new Buffer(" "), 0, 1, 0, function(err, written) {
                   if (err) { next(err); return; }
                   assert.equal(1, written);
-                  fs.close(fd);
+                  fs.closeSync(fd);
 
                   Collection.open(COLL_PATH, function(err, collection) {
                     if (err) { next(err); return; }
