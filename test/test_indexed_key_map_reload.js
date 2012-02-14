@@ -1,7 +1,7 @@
 module.exports.run = function(next) {
   
   var assert = require('assert');
-  var sys    = require('sys') || require('util');
+  var sys    = require('util') || require('sys');
   var fs     = require('fs');
   var indexed_key_map = require(__dirname + '/../lib/alfred/indexed_key_map.js');
   var random = require('../tools/random_generator');

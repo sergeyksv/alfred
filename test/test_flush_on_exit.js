@@ -1,7 +1,7 @@
 module.exports.run = function(next) {
   
   var assert = require('assert'),
-      sys    = require('sys'),
+      sys    = require('util') || require('sys'),
       fs     = require('fs'),
       random = require('../tools/random_generator');
   
