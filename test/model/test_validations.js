@@ -112,7 +112,12 @@ module.exports.run = function(next) {
     var user = User.new(WRONG_USER);
     user.save(function(errors) {
       assert.ok(errors !== null, 'errors is null');
-      assert.deepEqual(errors, EXPECTED_ERRORS);
+      assert.ok(errors.length == EXPECTED_ERRORS.length, 'number of expected error not match');
+      for (var i=0; i<errors.length; i++ ) {
+        var re = errors[i];
+        var ee = EXPECTED_ERRORS[i];
+	assert.ok(JSON.stringify(re)==JSON.stringify(ee), 'deep equal substitution');
+      }
       var rightUser = User.new(RIGHT_USER);
       rightUser.save(function(errors) {
         assert.ok(errors === null, util.inspect(errors) + " is not null");
