@@ -4,7 +4,8 @@
 , "homepage" : "http://pgte.github.com/alfred"
 , "author" : "Pedro Teixeira <pedro.teixeira@gmail.com> (http://metaduck.com)"
 , "contributors" :
-  [ "Pedro Teixeira <pedro.teixeira@gmail.com>"
+  [ "Pedro Teixeira <pedro.teixeira@gmail.com>",
+    "Sergey Korotkov <sergeyksv@gmail.com>"
   ]
 , "repository" :
   { "type" : "git"
@@ -12,7 +13,7 @@
   }
 , "bugs" :
   { "mail" : "pedro.teixeira@gmail.com"
-  , "web" : "http://github.com/pgte/alfred/issues"
+  , "url" : "http://github.com/pgte/alfred/issues"
   }
 , "directories" : { "lib" : "./lib/alfred" }
 , "main" : "./index.js"
