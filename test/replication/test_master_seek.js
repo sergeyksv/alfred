@@ -171,7 +171,7 @@ module.exports.run = function(next) {
       var expected_objects = [
         { m: 'meta',
         command: 'attach_key_map',
-        arguments: [ 'users', { cache_slots: 1000 }, ],
+        arguments: [ 'users', { cache_slots: 1000, type: 'cached_key_map', compact_interval: 3600000 }, ],
         __log_pos: 1}
 
       , { m: 'meta',
